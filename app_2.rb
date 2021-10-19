@@ -24,8 +24,12 @@ while humain.lifepoints>0 && ennemis[0].lifepoints >0 ||ennemis[1].lifepoints>0
     puts "s - chercher à se soigner "
     puts "\n \n"
     puts "attaquer un joueur en vue :"
-    puts "0 - #{ennemis[0].name} a #{ennemis[0].lifepoints} points de vie"
-    puts "1 - #{ennemis[1].name} a #{ennemis[1].lifepoints} points de vie"
+    # puts "0 - #{ennemis[0].name} a #{ennemis[0].lifepoints} points de vie"
+    # puts "1 - #{ennemis[1].name} a #{ennemis[1].lifepoints} points de vie"
+    ennemis.each_with_index do |enemy, index|
+      next if enemy.lifepoints <= 0
+      puts "#{index} - #{enemy.name} a #{enemy.lifepoints} points de vie"
+    end
     choix = gets.chomp
     case choix
     when "a"
@@ -41,7 +45,8 @@ while humain.lifepoints>0 && ennemis[0].lifepoints >0 ||ennemis[1].lifepoints>0
     end
     humain_position=false
   else
-    ennemis.each do |ennemis| 
+    ennemis.each do |ennemis|
+      next if ennemis.lifepoints <=0 
       ennemis.attacks(humain)
       puts humain.lifepoints
       humain_position =true

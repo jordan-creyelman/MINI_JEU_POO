@@ -57,25 +57,25 @@ class  Game
        @enemies[0].lifepoints-=@humaun_player.compute_damage
     
         kill_player(@enemies[0])   if  @enemies[0].lifepoints<=0
-      end
+    
     when  "1"
       @enemies[1].lifepoints-=@humaun_player.compute_damage
       
         kill_player(@enemies[1]) if @enemies[1].lifepoints<=0
       
-      end
+      
       
     when "2"
       @enemies[2].lifepoints-=@humaun_player.compute_damage
       
         kill_player(@enemies[2]) if @enemies[2].lifepoints<=0
       
-      end
+      
   when "3"
     @enemies[3].lifepoints-=@humaun_player.compute_damage
    
       kill_player(@enemies[3])  if @enemies[3].lifepoints<=0
-    end
+    
   end  
 end
 def enemies_attack()
