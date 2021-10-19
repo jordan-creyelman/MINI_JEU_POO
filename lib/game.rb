@@ -55,26 +55,26 @@ class  Game
       @humaun_player.search_health_pack
     when "0"
        @enemies[0].lifepoints-=@humaun_player.compute_damage
-      if  @enemies[0].lifepoints<=0
-        kill_player(@enemies[0])
+    
+        kill_player(@enemies[0])   if  @enemies[0].lifepoints<=0
       end
     when  "1"
       @enemies[1].lifepoints-=@humaun_player.compute_damage
-      if @enemies[1].lifepoints<=0
-        kill_player(@enemies[1])
+      
+        kill_player(@enemies[1]) if @enemies[1].lifepoints<=0
       
       end
       
     when "2"
       @enemies[2].lifepoints-=@humaun_player.compute_damage
-      if @enemies[2].lifepoints<=0
-        kill_player(@enemies[2])
+      
+        kill_player(@enemies[2]) if @enemies[2].lifepoints<=0
       
       end
   when "3"
     @enemies[3].lifepoints-=@humaun_player.compute_damage
-    if @enemies[3].lifepoints<=0
-      kill_player(@enemies[3])
+   
+      kill_player(@enemies[3])  if @enemies[3].lifepoints<=0
     end
   end  
 end
