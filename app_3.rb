@@ -8,10 +8,9 @@ puts ("-"*49)
 puts ("quel est votre speudo")
 speudo = gets.chomp
 my_game = Game.new(speudo)
-
 human_position = true
 while  my_game.is_still_ongoing?
-    
+  
   if human_position == true
      puts choice =my_game.menu()
     my_game.menu_choice(choice)
@@ -20,6 +19,6 @@ while  my_game.is_still_ongoing?
     my_game.enemies_attack
     human_position=true
   end
- 
+  my_game.humaun_player.show_state
 end
 my_game.end

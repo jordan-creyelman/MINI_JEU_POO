@@ -35,6 +35,9 @@ class HumanPlayer < Player
     @lifepoints=100
     @weapon_level =1
   end
+  def show_state
+    puts "#{name} a #{lifepoints} points de vie"
+  end
 
   def compute_damage
     rand(1..6) * @weapon_level
